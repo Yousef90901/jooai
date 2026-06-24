@@ -28,7 +28,25 @@ joo → joo.ps1 → sets env vars → runs opencode binary with JOO config
 | Agents | `~/.config/joo/agents/` |
 | TUI Config | `~/.config/joo/tui.json` |
 
-## Installation
+## Quick Install (Recommended 🚀)
+
+Run this in PowerShell **as Administrator**:
+
+```powershell
+.\setup.ps1
+```
+
+This installs everything: prerequisites, JOO binary, skills, agents, MCPs, and Ollama.
+
+### Options
+```powershell
+.\setup.ps1 -NoOllama    # Skip Ollama (use cloud models instead)
+.\setup.ps1 -NoMCP       # Skip MCP servers
+.\setup.ps1 -NoECC       # Skip ECC agent harness
+.\setup.ps1 -Help        # Show all options
+```
+
+## Manual Installation
 
 ```bash
 # Quick install (requires opencode-ai installed):
