@@ -7,7 +7,7 @@
     </picture>
   </a>
 </p>
-<p align="center">The open source AI coding agent.</p>
+<p align="center">Der Open-Source KI-Coding-Agent.</p>
 <p align="center">
   <a href="https://opencode.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
   <a href="https://www.npmjs.com/package/opencode-ai"><img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /></a>
@@ -49,31 +49,31 @@
 # YOLO
 curl -fsSL https://opencode.ai/install | bash
 
-# Package managers
-npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+# Paketmanager
+npm i -g opencode-ai@latest        # oder bun/pnpm/yarn
 scoop install opencode             # Windows
 choco install opencode             # Windows
-brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
-brew install opencode              # macOS and Linux (official brew formula, updated less)
+brew install anomalyco/tap/opencode # macOS und Linux (empfohlen, immer aktuell)
+brew install opencode              # macOS und Linux (offizielle Brew-Formula, seltener aktualisiert)
 sudo pacman -S opencode            # Arch Linux (Stable)
 paru -S opencode-bin               # Arch Linux (Latest from AUR)
-mise use -g opencode               # Any OS
-nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+mise use -g opencode               # jedes Betriebssystem
+nix run nixpkgs#opencode           # oder github:anomalyco/opencode für den neuesten dev-Branch
 ```
 
 > [!TIP]
-> Remove versions older than 0.1.x before installing.
+> Entferne Versionen älter als 0.1.x vor der Installation.
 
-### Desktop App (BETA)
+### Desktop-App (BETA)
 
-OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
+OpenCode ist auch als Desktop-Anwendung verfügbar. Lade sie direkt von der [Releases-Seite](https://github.com/anomalyco/opencode/releases) oder [opencode.ai/download](https://opencode.ai/download) herunter.
 
-| Platform              | Download                           |
+| Plattform             | Download                           |
 | --------------------- | ---------------------------------- |
 | macOS (Apple Silicon) | `opencode-desktop-mac-arm64.dmg`   |
 | macOS (Intel)         | `opencode-desktop-mac-x64.dmg`     |
 | Windows               | `opencode-desktop-windows-x64.exe` |
-| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |
+| Linux                 | `.deb`, `.rpm` oder AppImage       |
 
 ```bash
 # macOS (Homebrew)
@@ -82,48 +82,48 @@ brew install --cask opencode-desktop
 scoop bucket add extras; scoop install extras/opencode-desktop
 ```
 
-#### Installation Directory
+#### Installationsverzeichnis
 
-The install script respects the following priority order for the installation path:
+Das Installationsskript beachtet die folgende Prioritätsreihenfolge für den Installationspfad:
 
-1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
-2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
-3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)
-4. `$HOME/.opencode/bin` - Default fallback
+1. `$OPENCODE_INSTALL_DIR` - Benutzerdefiniertes Installationsverzeichnis
+2. `$XDG_BIN_DIR` - XDG Base Directory Specification-konformer Pfad
+3. `$HOME/bin` - Standard-Binärverzeichnis des Users (falls vorhanden oder erstellbar)
+4. `$HOME/.opencode/bin` - Standard-Fallback
 
 ```bash
-# Examples
+# Beispiele
 OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
 XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
 ```
 
 ### Agents
 
-OpenCode includes two built-in agents you can switch between with the `Tab` key.
+OpenCode enthält zwei eingebaute Agents, zwischen denen du mit der `Tab`-Taste wechseln kannst.
 
-- **build** - Default, full-access agent for development work
-- **plan** - Read-only agent for analysis and code exploration
-  - Denies file edits by default
-  - Asks permission before running bash commands
-  - Ideal for exploring unfamiliar codebases or planning changes
+- **build** - Standard-Agent mit vollem Zugriff für Entwicklungsarbeit
+- **plan** - Nur-Lese-Agent für Analyse und Code-Exploration
+  - Verweigert Datei-Edits standardmäßig
+  - Fragt vor dem Ausführen von bash-Befehlen nach
+  - Ideal zum Erkunden unbekannter Codebases oder zum Planen von Änderungen
 
-Also included is a **general** subagent for complex searches and multistep tasks.
-This is used internally and can be invoked using `@general` in messages.
+Außerdem ist ein **general**-Subagent für komplexe Suchen und mehrstufige Aufgaben enthalten.
+Dieser wird intern genutzt und kann in Nachrichten mit `@general` aufgerufen werden.
 
-Learn more about [agents](https://opencode.ai/docs/agents).
+Mehr dazu unter [Agents](https://opencode.ai/docs/agents).
 
-### Documentation
+### Dokumentation
 
-For more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).
+Mehr Infos zur Konfiguration von OpenCode findest du in unseren [**Docs**](https://opencode.ai/docs).
 
-### Contributing
+### Beitragen
 
-If you're interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+Wenn du zu OpenCode beitragen möchtest, lies bitte unsere [Contributing Docs](./CONTRIBUTING.md), bevor du einen Pull Request einreichst.
 
-### Building on OpenCode
+### Auf OpenCode aufbauen
 
-If you are working on a project that's related to OpenCode and is using "opencode" as part of its name, for example "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
+Wenn du an einem Projekt arbeitest, das mit OpenCode zusammenhängt und "opencode" als Teil seines Namens verwendet (z.B. "opencode-dashboard" oder "opencode-mobile"), füge bitte einen Hinweis in deine README ein, dass es nicht vom OpenCode-Team gebaut wird und nicht in irgendeiner Weise mit uns verbunden ist.
 
 ---
 
-**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
+**Tritt unserer Community bei** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)

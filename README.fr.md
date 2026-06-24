@@ -3,11 +3,11 @@
     <picture>
       <source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)">
       <source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)">
-      <img src="packages/console/app/src/asset/logo-ornate-light.svg" alt="OpenCode logo">
+      <img src="packages/console/app/src/asset/logo-ornate-light.svg" alt="Logo OpenCode">
     </picture>
   </a>
 </p>
-<p align="center">The open source AI coding agent.</p>
+<p align="center">L'agent de codage IA open source.</p>
 <p align="center">
   <a href="https://opencode.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
   <a href="https://www.npmjs.com/package/opencode-ai"><img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /></a>
@@ -49,31 +49,31 @@
 # YOLO
 curl -fsSL https://opencode.ai/install | bash
 
-# Package managers
-npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+# Gestionnaires de paquets
+npm i -g opencode-ai@latest        # ou bun/pnpm/yarn
 scoop install opencode             # Windows
 choco install opencode             # Windows
-brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
-brew install opencode              # macOS and Linux (official brew formula, updated less)
+brew install anomalyco/tap/opencode # macOS et Linux (recommandé, toujours à jour)
+brew install opencode              # macOS et Linux (formule officielle brew, mise à jour moins fréquente)
 sudo pacman -S opencode            # Arch Linux (Stable)
 paru -S opencode-bin               # Arch Linux (Latest from AUR)
-mise use -g opencode               # Any OS
-nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+mise use -g opencode               # n'importe quel OS
+nix run nixpkgs#opencode           # ou github:anomalyco/opencode pour la branche dev la plus récente
 ```
 
 > [!TIP]
-> Remove versions older than 0.1.x before installing.
+> Supprimez les versions antérieures à 0.1.x avant d'installer.
 
-### Desktop App (BETA)
+### Application de bureau (BETA)
 
-OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
+OpenCode est aussi disponible en application de bureau. Téléchargez-la directement depuis la [page des releases](https://github.com/anomalyco/opencode/releases) ou [opencode.ai/download](https://opencode.ai/download).
 
-| Platform              | Download                           |
+| Plateforme            | Téléchargement                     |
 | --------------------- | ---------------------------------- |
 | macOS (Apple Silicon) | `opencode-desktop-mac-arm64.dmg`   |
 | macOS (Intel)         | `opencode-desktop-mac-x64.dmg`     |
 | Windows               | `opencode-desktop-windows-x64.exe` |
-| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |
+| Linux                 | `.deb`, `.rpm`, ou AppImage        |
 
 ```bash
 # macOS (Homebrew)
@@ -82,48 +82,48 @@ brew install --cask opencode-desktop
 scoop bucket add extras; scoop install extras/opencode-desktop
 ```
 
-#### Installation Directory
+#### Répertoire d'installation
 
-The install script respects the following priority order for the installation path:
+Le script d'installation respecte l'ordre de priorité suivant pour le chemin d'installation :
 
-1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
-2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
-3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)
-4. `$HOME/.opencode/bin` - Default fallback
+1. `$OPENCODE_INSTALL_DIR` - Répertoire d'installation personnalisé
+2. `$XDG_BIN_DIR` - Chemin conforme à la spécification XDG Base Directory
+3. `$HOME/bin` - Répertoire binaire utilisateur standard (s'il existe ou peut être créé)
+4. `$HOME/.opencode/bin` - Repli par défaut
 
 ```bash
-# Examples
+# Exemples
 OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
 XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
 ```
 
 ### Agents
 
-OpenCode includes two built-in agents you can switch between with the `Tab` key.
+OpenCode inclut deux agents intégrés que vous pouvez basculer avec la touche `Tab`.
 
-- **build** - Default, full-access agent for development work
-- **plan** - Read-only agent for analysis and code exploration
-  - Denies file edits by default
-  - Asks permission before running bash commands
-  - Ideal for exploring unfamiliar codebases or planning changes
+- **build** - Par défaut, agent avec accès complet pour le travail de développement
+- **plan** - Agent en lecture seule pour l'analyse et l'exploration du code
+  - Refuse les modifications de fichiers par défaut
+  - Demande l'autorisation avant d'exécuter des commandes bash
+  - Idéal pour explorer une base de code inconnue ou planifier des changements
 
-Also included is a **general** subagent for complex searches and multistep tasks.
-This is used internally and can be invoked using `@general` in messages.
+Un sous-agent **general** est aussi inclus pour les recherches complexes et les tâches en plusieurs étapes.
+Il est utilisé en interne et peut être invoqué via `@general` dans les messages.
 
-Learn more about [agents](https://opencode.ai/docs/agents).
+En savoir plus sur les [agents](https://opencode.ai/docs/agents).
 
 ### Documentation
 
-For more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).
+Pour plus d'informations sur la configuration d'OpenCode, [**consultez notre documentation**](https://opencode.ai/docs).
 
-### Contributing
+### Contribuer
 
-If you're interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+Si vous souhaitez contribuer à OpenCode, lisez nos [docs de contribution](./CONTRIBUTING.md) avant de soumettre une pull request.
 
-### Building on OpenCode
+### Construire avec OpenCode
 
-If you are working on a project that's related to OpenCode and is using "opencode" as part of its name, for example "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
+Si vous travaillez sur un projet lié à OpenCode et que vous utilisez "opencode" dans le nom du projet (par exemple, "opencode-dashboard" ou "opencode-mobile"), ajoutez une note dans votre README pour préciser qu'il n'est pas construit par l'équipe OpenCode et qu'il n'est pas affilié à nous.
 
 ---
 
-**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
+**Rejoignez notre communauté** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)

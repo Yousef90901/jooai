@@ -7,7 +7,7 @@
     </picture>
   </a>
 </p>
-<p align="center">The open source AI coding agent.</p>
+<p align="center">Açık kaynaklı yapay zeka kodlama asistanı.</p>
 <p align="center">
   <a href="https://opencode.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
   <a href="https://www.npmjs.com/package/opencode-ai"><img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /></a>
@@ -43,37 +43,37 @@
 
 ---
 
-### Installation
+### Kurulum
 
 ```bash
 # YOLO
 curl -fsSL https://opencode.ai/install | bash
 
-# Package managers
-npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+# Paket yöneticileri
+npm i -g opencode-ai@latest        # veya bun/pnpm/yarn
 scoop install opencode             # Windows
 choco install opencode             # Windows
-brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
-brew install opencode              # macOS and Linux (official brew formula, updated less)
+brew install anomalyco/tap/opencode # macOS ve Linux (önerilir, her zaman güncel)
+brew install opencode              # macOS ve Linux (resmi brew formülü, daha az güncellenir)
 sudo pacman -S opencode            # Arch Linux (Stable)
 paru -S opencode-bin               # Arch Linux (Latest from AUR)
-mise use -g opencode               # Any OS
-nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+mise use -g opencode               # Tüm işletim sistemleri
+nix run nixpkgs#opencode           # veya en güncel geliştirme dalı için github:anomalyco/opencode
 ```
 
 > [!TIP]
-> Remove versions older than 0.1.x before installing.
+> Kurulumdan önce 0.1.x'ten eski sürümleri kaldırın.
 
-### Desktop App (BETA)
+### Masaüstü Uygulaması (BETA)
 
-OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
+OpenCode ayrıca masaüstü uygulaması olarak da mevcuttur. Doğrudan [sürüm sayfasından](https://github.com/anomalyco/opencode/releases) veya [opencode.ai/download](https://opencode.ai/download) adresinden indirebilirsiniz.
 
-| Platform              | Download                           |
+| Platform              | İndirme                            |
 | --------------------- | ---------------------------------- |
 | macOS (Apple Silicon) | `opencode-desktop-mac-arm64.dmg`   |
 | macOS (Intel)         | `opencode-desktop-mac-x64.dmg`     |
 | Windows               | `opencode-desktop-windows-x64.exe` |
-| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |
+| Linux                 | `.deb`, `.rpm` veya AppImage       |
 
 ```bash
 # macOS (Homebrew)
@@ -82,48 +82,48 @@ brew install --cask opencode-desktop
 scoop bucket add extras; scoop install extras/opencode-desktop
 ```
 
-#### Installation Directory
+#### Kurulum Dizini (Installation Directory)
 
-The install script respects the following priority order for the installation path:
+Kurulum betiği (install script), kurulum yolu (installation path) için aşağıdaki öncelik sırasını takip eder:
 
-1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
-2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
-3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)
-4. `$HOME/.opencode/bin` - Default fallback
+1. `$OPENCODE_INSTALL_DIR` - Özel kurulum dizini
+2. `$XDG_BIN_DIR` - XDG Base Directory Specification uyumlu yol
+3. `$HOME/bin` - Standart kullanıcı binary dizini (varsa veya oluşturulabiliyorsa)
+4. `$HOME/.opencode/bin` - Varsayılan yedek konum
 
 ```bash
-# Examples
+# Örnekler
 OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
 XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
 ```
 
-### Agents
+### Ajanlar
 
-OpenCode includes two built-in agents you can switch between with the `Tab` key.
+OpenCode, `Tab` tuşuyla aralarında geçiş yapabileceğiniz iki yerleşik (built-in) ajan içerir.
 
-- **build** - Default, full-access agent for development work
-- **plan** - Read-only agent for analysis and code exploration
-  - Denies file edits by default
-  - Asks permission before running bash commands
-  - Ideal for exploring unfamiliar codebases or planning changes
+- **build** - Varsayılan, geliştirme çalışmaları için tam erişimli ajan
+- **plan** - Analiz ve kod keşfi için salt okunur ajan
+  - Varsayılan olarak dosya düzenlemelerini reddeder
+  - Bash komutlarını çalıştırmadan önce izin ister
+  - Tanımadığınız kod tabanlarını keşfetmek veya değişiklikleri planlamak için ideal
 
-Also included is a **general** subagent for complex searches and multistep tasks.
-This is used internally and can be invoked using `@general` in messages.
+Ayrıca, karmaşık aramalar ve çok adımlı görevler için bir **genel** alt ajan bulunmaktadır.
+Bu dahili olarak kullanılır ve mesajlarda `@general` ile çağrılabilir.
 
-Learn more about [agents](https://opencode.ai/docs/agents).
+[Ajanlar](https://opencode.ai/docs/agents) hakkında daha fazla bilgi edinin.
 
-### Documentation
+### Dokümantasyon
 
-For more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).
+OpenCode'u nasıl yapılandıracağınız hakkında daha fazla bilgi için [**dokümantasyonumuza göz atın**](https://opencode.ai/docs).
 
-### Contributing
+### Katkıda Bulunma
 
-If you're interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+OpenCode'a katkıda bulunmak istiyorsanız, lütfen bir pull request göndermeden önce [katkıda bulunma dokümanlarımızı](./CONTRIBUTING.md) okuyun.
 
-### Building on OpenCode
+### OpenCode Üzerine Geliştirme
 
-If you are working on a project that's related to OpenCode and is using "opencode" as part of its name, for example "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
+OpenCode ile ilgili bir proje üzerinde çalışıyorsanız ve projenizin adının bir parçası olarak "opencode" kullanıyorsanız (örneğin, "opencode-dashboard" veya "opencode-mobile"), lütfen README dosyanıza projenin OpenCode ekibi tarafından geliştirilmediğini ve bizimle hiçbir şekilde bağlantılı olmadığını belirten bir not ekleyin.
 
 ---
 
-**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
+**Topluluğumuza katılın** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)

@@ -7,7 +7,7 @@
     </picture>
   </a>
 </p>
-<p align="center">The open source AI coding agent.</p>
+<p align="center">開源的 AI Coding Agent。</p>
 <p align="center">
   <a href="https://opencode.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
   <a href="https://www.npmjs.com/package/opencode-ai"><img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /></a>
@@ -43,87 +43,86 @@
 
 ---
 
-### Installation
+### 安裝
 
 ```bash
-# YOLO
+# 直接安裝 (YOLO)
 curl -fsSL https://opencode.ai/install | bash
 
-# Package managers
-npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+# 套件管理員
+npm i -g opencode-ai@latest        # 也可使用 bun/pnpm/yarn
 scoop install opencode             # Windows
 choco install opencode             # Windows
-brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
-brew install opencode              # macOS and Linux (official brew formula, updated less)
+brew install anomalyco/tap/opencode # macOS 與 Linux（推薦，始終保持最新）
+brew install opencode              # macOS 與 Linux（官方 brew formula，更新頻率較低）
 sudo pacman -S opencode            # Arch Linux (Stable)
 paru -S opencode-bin               # Arch Linux (Latest from AUR)
-mise use -g opencode               # Any OS
-nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+mise use -g opencode               # 任何作業系統
+nix run nixpkgs#opencode           # 或使用 github:anomalyco/opencode 以取得最新開發分支
 ```
 
 > [!TIP]
-> Remove versions older than 0.1.x before installing.
+> 安裝前請先移除 0.1.x 以前的舊版本。
 
-### Desktop App (BETA)
+### 桌面應用程式 (BETA)
 
-OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
+OpenCode 也提供桌面版應用程式。您可以直接從 [發佈頁面 (releases page)](https://github.com/anomalyco/opencode/releases) 或 [opencode.ai/download](https://opencode.ai/download) 下載。
 
-| Platform              | Download                           |
+| 平台                  | 下載連結                           |
 | --------------------- | ---------------------------------- |
 | macOS (Apple Silicon) | `opencode-desktop-mac-arm64.dmg`   |
 | macOS (Intel)         | `opencode-desktop-mac-x64.dmg`     |
 | Windows               | `opencode-desktop-windows-x64.exe` |
-| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |
+| Linux                 | `.deb`, `.rpm`, 或 AppImage        |
 
 ```bash
-# macOS (Homebrew)
+# macOS (Homebrew Cask)
 brew install --cask opencode-desktop
 # Windows (Scoop)
 scoop bucket add extras; scoop install extras/opencode-desktop
 ```
 
-#### Installation Directory
+#### 安裝目錄
 
-The install script respects the following priority order for the installation path:
+安裝腳本會依據以下優先順序決定安裝路徑：
 
-1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
-2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
-3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)
-4. `$HOME/.opencode/bin` - Default fallback
+1. `$OPENCODE_INSTALL_DIR` - 自定義安裝目錄
+2. `$XDG_BIN_DIR` - 符合 XDG 基礎目錄規範的路徑
+3. `$HOME/bin` - 標準使用者執行檔目錄 (若存在或可建立)
+4. `$HOME/.opencode/bin` - 預設備用路徑
 
 ```bash
-# Examples
+# 範例
 OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
 XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
 ```
 
 ### Agents
 
-OpenCode includes two built-in agents you can switch between with the `Tab` key.
+OpenCode 內建了兩種 Agent，您可以使用 `Tab` 鍵快速切換。
 
-- **build** - Default, full-access agent for development work
-- **plan** - Read-only agent for analysis and code exploration
-  - Denies file edits by default
-  - Asks permission before running bash commands
-  - Ideal for exploring unfamiliar codebases or planning changes
+- **build** - 預設模式，具備完整權限的 Agent，適用於開發工作。
+- **plan** - 唯讀模式，適用於程式碼分析與探索。
+  - 預設禁止修改檔案。
+  - 執行 bash 指令前會詢問權限。
+  - 非常適合用來探索陌生的程式碼庫或規劃變更。
 
-Also included is a **general** subagent for complex searches and multistep tasks.
-This is used internally and can be invoked using `@general` in messages.
+此外，OpenCode 還包含一個 **general** 子 Agent，用於處理複雜搜尋與多步驟任務。此 Agent 供系統內部使用，亦可透過在訊息中輸入 `@general` 來呼叫。
 
-Learn more about [agents](https://opencode.ai/docs/agents).
+了解更多關於 [Agents](https://opencode.ai/docs/agents) 的資訊。
 
-### Documentation
+### 線上文件
 
-For more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).
+關於如何設定 OpenCode 的詳細資訊，請參閱我們的 [**官方文件**](https://opencode.ai/docs)。
 
-### Contributing
+### 參與貢獻
 
-If you're interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+如果您有興趣參與 OpenCode 的開發，請在提交 Pull Request 前先閱讀我們的 [貢獻指南 (Contributing Docs)](./CONTRIBUTING.md)。
 
-### Building on OpenCode
+### 基於 OpenCode 進行開發
 
-If you are working on a project that's related to OpenCode and is using "opencode" as part of its name, for example "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
+如果您正在開發與 OpenCode 相關的專案，並在名稱中使用了 "opencode"（例如 "opencode-dashboard" 或 "opencode-mobile"），請在您的 README 中加入聲明，說明該專案並非由 OpenCode 團隊開發，且與我們沒有任何隸屬關係。
 
 ---
 
-**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
+**加入我們的社群** [飞书](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=738j8655-cd59-4633-a30a-1124e0096789&qr_code=true) | [X.com](https://x.com/opencode)

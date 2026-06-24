@@ -7,7 +7,7 @@
     </picture>
   </a>
 </p>
-<p align="center">The open source AI coding agent.</p>
+<p align="center">OpenCode je open source AI agent za programiranje.</p>
 <p align="center">
   <a href="https://opencode.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
   <a href="https://www.npmjs.com/package/opencode-ai"><img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /></a>
@@ -43,37 +43,37 @@
 
 ---
 
-### Installation
+### Instalacija
 
 ```bash
 # YOLO
 curl -fsSL https://opencode.ai/install | bash
 
-# Package managers
-npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+# Package manageri
+npm i -g opencode-ai@latest        # ili bun/pnpm/yarn
 scoop install opencode             # Windows
 choco install opencode             # Windows
-brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
-brew install opencode              # macOS and Linux (official brew formula, updated less)
+brew install anomalyco/tap/opencode # macOS i Linux (preporučeno, uvijek ažurno)
+brew install opencode              # macOS i Linux (zvanična brew formula, rjeđe se ažurira)
 sudo pacman -S opencode            # Arch Linux (Stable)
 paru -S opencode-bin               # Arch Linux (Latest from AUR)
-mise use -g opencode               # Any OS
-nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+mise use -g opencode               # Bilo koji OS
+nix run nixpkgs#opencode           # ili github:anomalyco/opencode za najnoviji dev branch
 ```
 
 > [!TIP]
-> Remove versions older than 0.1.x before installing.
+> Ukloni verzije starije od 0.1.x prije instalacije.
 
-### Desktop App (BETA)
+### Desktop aplikacija (BETA)
 
-OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
+OpenCode je dostupan i kao desktop aplikacija. Preuzmi je direktno sa [stranice izdanja](https://github.com/anomalyco/opencode/releases) ili sa [opencode.ai/download](https://opencode.ai/download).
 
-| Platform              | Download                           |
+| Platforma             | Preuzimanje                        |
 | --------------------- | ---------------------------------- |
 | macOS (Apple Silicon) | `opencode-desktop-mac-arm64.dmg`   |
 | macOS (Intel)         | `opencode-desktop-mac-x64.dmg`     |
 | Windows               | `opencode-desktop-windows-x64.exe` |
-| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |
+| Linux                 | `.deb`, `.rpm`, ili AppImage       |
 
 ```bash
 # macOS (Homebrew)
@@ -82,48 +82,48 @@ brew install --cask opencode-desktop
 scoop bucket add extras; scoop install extras/opencode-desktop
 ```
 
-#### Installation Directory
+#### Instalacijski direktorij
 
-The install script respects the following priority order for the installation path:
+Instalacijska skripta koristi sljedeći redoslijed prioriteta za putanju instalacije:
 
-1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
-2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
-3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)
-4. `$HOME/.opencode/bin` - Default fallback
+1. `$OPENCODE_INSTALL_DIR` - Prilagođeni instalacijski direktorij
+2. `$XDG_BIN_DIR` - Putanja usklađena sa XDG Base Directory specifikacijom
+3. `$HOME/bin` - Standardni korisnički bin direktorij (ako postoji ili se može kreirati)
+4. `$HOME/.opencode/bin` - Podrazumijevana rezervna lokacija
 
 ```bash
-# Examples
+# Primjeri
 OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
 XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
 ```
 
-### Agents
+### Agenti
 
-OpenCode includes two built-in agents you can switch between with the `Tab` key.
+OpenCode uključuje dva ugrađena agenta između kojih možeš prebacivati tasterom `Tab`.
 
-- **build** - Default, full-access agent for development work
-- **plan** - Read-only agent for analysis and code exploration
-  - Denies file edits by default
-  - Asks permission before running bash commands
-  - Ideal for exploring unfamiliar codebases or planning changes
+- **build** - Podrazumijevani agent sa punim pristupom za razvoj
+- **plan** - Agent samo za čitanje za analizu i istraživanje koda
+  - Podrazumijevano zabranjuje izmjene datoteka
+  - Traži dozvolu prije pokretanja bash komandi
+  - Idealan za istraživanje nepoznatih codebase-ova ili planiranje izmjena
 
-Also included is a **general** subagent for complex searches and multistep tasks.
-This is used internally and can be invoked using `@general` in messages.
+Uključen je i **general** pod-agent za složene pretrage i višekoračne zadatke.
+Koristi se interno i može se pozvati pomoću `@general` u porukama.
 
-Learn more about [agents](https://opencode.ai/docs/agents).
+Saznaj više o [agentima](https://opencode.ai/docs/agents).
 
-### Documentation
+### Dokumentacija
 
-For more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).
+Za više informacija o konfiguraciji OpenCode-a, [**pogledaj dokumentaciju**](https://opencode.ai/docs).
 
-### Contributing
+### Doprinosi
 
-If you're interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+Ako želiš doprinositi OpenCode-u, pročitaj [upute za doprinošenje](./CONTRIBUTING.md) prije slanja pull requesta.
 
-### Building on OpenCode
+### Gradnja na OpenCode-u
 
-If you are working on a project that's related to OpenCode and is using "opencode" as part of its name, for example "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
+Ako radiš na projektu koji je povezan s OpenCode-om i koristi "opencode" kao dio naziva, npr. "opencode-dashboard" ili "opencode-mobile", dodaj napomenu u svoj README da projekat nije napravio OpenCode tim i da nije povezan s nama.
 
 ---
 
-**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
+**Pridruži se našoj zajednici** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
